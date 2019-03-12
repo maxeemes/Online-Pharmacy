@@ -42,7 +42,7 @@ require_once("assets/delMarked_info.php");
                 </ol>
             </nav>
 			<div class="Content">
-			<?php require_once("assets/delMarkedContent.php") ?>
+			    <?php require_once("assets/delMarkedContent.php") ?>
 			</div>
 		</div>
 	</div>

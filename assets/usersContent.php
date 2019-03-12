@@ -83,7 +83,7 @@ HEREDOC;
 						  } else if ($row['status'] == 1) {
 							  $type = "Админ";
 						  } else if ($row['status'] == 2) {
-							  $type = "Полные права";
+							  $type = "root пользователь";
 						  }
 
 						  define("SALT_LENGHT", 10);

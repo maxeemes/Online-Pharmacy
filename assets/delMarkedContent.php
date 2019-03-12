@@ -4,8 +4,8 @@ if (isset($_POST['delNoBTN'])) {
 	echo "<script>location.replace('delMarked.php');</script>";
 }
 	if (isset($_GET['delGroup'])) {
-		$temp = str_replace('_', ' ', $_GET['delGroup']);
-		echo <<<HTML
+        $temp = str_replace('_', ' ', $_GET['delGroup']);
+        echo <<<HTML
 					<br>
 							<div class="alert alert-danger" role="alert">
 								Вы действительно хотите удалить запись? '{$temp}'?
@@ -18,19 +18,19 @@ if (isset($_POST['delNoBTN'])) {
 							</form>
 HTML;
 
-		if (isset($_POST['delYesGroup'])) {
-			$sql = "DELETE FROM category WHERE category_category = '{$temp}'";
-			$result = mysqli_query($conn, $sql);
-			echo <<<HTML
+        if (isset($_POST['delYesGroup'])) {
+            $sql = "DELETE FROM category WHERE category_category = '{$temp}'";
+            $result = mysqli_query($conn, $sql);
+            echo <<<HTML
 		<br>
 		<div class="alert alert-success" role="alert">
 			Запись успешно удалена!
 		</div>	
 HTML;
-			sleep(1);
-			echo "<script>location.replace('delMarked.php');</script>";
-		}
-	}
+            sleep(1);
+            echo "<script>location.replace('delMarked.php');</script>";
+        }
+    }
 	if (isset($_GET['redGroup'])) {
 		$temp = str_replace('_', ' ', $_GET['redGroup']);
 
@@ -90,19 +90,19 @@ HTML;
 		}
 	}
 	if (isset($_GET['redGroup'])) {
-		$temp = str_replace('_',' ',$_GET['redGroup']);
-		
-		$sql = "Update category Set category_status = '1' Where category_category = '{$temp}'";
-						$result = mysqli_query($conn, $sql);
-						echo <<<HTML
+        $temp = str_replace('_', ' ', $_GET['redGroup']);
+
+        $sql = "Update category Set category_status = '1' Where category_category = '{$temp}'";
+        $result = mysqli_query($conn, $sql);
+        echo <<<HTML
 		<br>
 		<div class="alert alert-success" role="alert">
 			Запись успешно Восстановлена!
 		</div>	
 HTML;
-						sleep(1);
-						echo "<script>location.replace('delMarked.php');</script>";
-	}
+        sleep(1);
+        echo "<script>location.replace('delMarked.php');</script>";
+    }
 	///////////////////////////
 		if (isset($_GET['redCustomer'])) {
 			$temp = str_replace('_', ' ', $_GET['redCustomer']);
@@ -170,10 +170,8 @@ HTML;
 								Вы действительно хотите удалить запись? '{$temp}'?
 							</div>
 							<form method="post">
-							<input type="submit"  name="delYesDeal" value="Да" style="width: 49%;color: black; 
-						border-color:#010508;" class="btn btn-outline-secondary">
-						<input type="submit"  name="delNoBTN" value="Нет" style="width: 49%;color: black; 
-						border-color:#010508;" class="btn btn-outline-secondary">
+                                <input type="submit"  name="delYesDeal" value="Да" class="btn btn-danger">
+						        <input type="submit"  name="delNoBTN" value="Нет" class="btn btn-secondary">
 							</form>
 HTML;
 		if (isset($_POST['delYesDeal'])) {
@@ -305,7 +303,6 @@ HEREDOC;
 						</tr>
 						</thead>
 HTML;
-	var_dump($_SESSION["DelMarkedDeal"]);
 	if(!is_bool($_SESSION["DelMarkedDeal"])) {
 		while ($row = mysqli_fetch_array($_SESSION["DelMarkedDeal"])) {
 			$temp = str_replace(' ', '_', $row['deal_name_customer']);
