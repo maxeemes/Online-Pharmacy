@@ -28,7 +28,7 @@ echo 			<<<HTML
   <p class="card-text">{$_SESSION["ProductCostsArray"][$i]} руб.</p>
     <a href="detailProduct.php?ParentProductName={$_SESSION["ProductNamesArray"][$i]}" class="btn btn-primary">Подробнее</a>
     <form method="post">
-    <input type="submit"  name="orderBTN" value="Заказ" class="btn btn-primary btn-block">
+    <input type="submit"  name="orderBTN" value="Заказ" class="btn btn-primary float-right">
     </form>
   </div>
 </form>

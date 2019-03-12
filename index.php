@@ -66,15 +66,11 @@ HTML;
 <body>
 	<div class="container">
 		<div class="Main">
-			<div class="Nav">
-				<div class="Official">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item active" aria-current="page">Главная</li>
-                        </ol>
-                    </nav>
-				</div>
-			</div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">Главная</li>
+                </ol>
+            </nav>
 			<div class="Content Row">
 				<?php require_once("assets/group.php") ?>
 			</div>				

@@ -203,7 +203,7 @@ HTML;
 		<br>
 		<div class="alert alert-success" role="alert">
 			Запись успешно изменена!
-		</div>	
+		</div>
 HTML;
 		sleep(1);
 		echo "<script>location.replace('customers.php');</script>";

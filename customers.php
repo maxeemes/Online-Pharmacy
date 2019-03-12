@@ -44,8 +44,6 @@ $host = "localhost";
                     <li class="breadcrumb-item active" aria-current="page">Заказчики</li>
                 </ol>
             </nav>
-            <div class="Nav">
-			</div>
 			<div class="Content">
 			    <div class="form-group">
 			        <h1 class="display-4">Заказчики</h1>
