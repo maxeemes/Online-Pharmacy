@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="accb8ac9-a46e-479b-b05b-3328e0518424" name="Default Changelist" comment="Edit2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/delMarkedContent.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/delMarkedContent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/group.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/group.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/subgroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/subgroup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delMarked.php" beforeDir="false" afterPath="$PROJECT_DIR$/delMarked.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subcat.php" beforeDir="false" afterPath="$PROJECT_DIR$/subcat.php" afterDir="false" />
+    <list default="true" id="accb8ac9-a46e-479b-b05b-3328e0518424" name="Default Changelist" comment="Исправил отображение пользователей">
+      <change beforePath="$PROJECT_DIR$/assets/usersContent.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/usersContent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/users.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,15 +27,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/product.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="102" column="57" selection-start-line="102" selection-start-column="43" selection-end-line="102" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/redProduct.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -83,11 +69,29 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/users.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/usersContent.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="59" column="25" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/delMarkedContent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="760">
-              <caret line="320" column="5" selection-start-line="320" selection-start-column="5" selection-end-line="320" selection-end-column="5" />
+            <state relative-caret-position="301">
+              <caret line="298" column="44" selection-start-line="298" selection-start-column="34" selection-end-line="298" selection-end-column="44" />
               <folding>
                 <element signature="n#style#0;n#input#0;n#form#0;n#!!top" expanded="true" />
               </folding>
@@ -98,8 +102,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+            <state relative-caret-position="459">
+              <caret line="63" selection-start-line="59" selection-end-line="63" />
             </state>
           </provider>
         </entry>
@@ -116,8 +120,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/subcat.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+            <state relative-caret-position="680">
+              <caret line="70" selection-start-line="64" selection-end-line="70" />
             </state>
           </provider>
         </entry>
@@ -140,10 +144,11 @@
       <find>orderRedBTN</find>
       <find>RedProductId</find>
       <find>ParentCatetegoryName</find>
-      <find>$conn</find>
       <find>delGroup</find>
       <find>$_SESSION[&quot;DelMarkedCategory&quot;]</find>
       <find>DelMarkedCategory</find>
+      <find>$conn</find>
+      <find>privilege</find>
       <find>DelMarkedCustomer</find>
     </findStrings>
   </component>
@@ -186,6 +191,8 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/subcat.php" />
         <option value="$PROJECT_DIR$/assets/delMarkedContent.php" />
+        <option value="$PROJECT_DIR$/users.php" />
+        <option value="$PROJECT_DIR$/assets/usersContent.php" />
       </list>
     </option>
   </component>
@@ -229,10 +236,11 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.notifications" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -287,7 +295,7 @@
       <workItem from="1552285981139" duration="405000" />
       <workItem from="1552286514775" duration="17866000" />
       <workItem from="1552364463453" duration="3053000" />
-      <workItem from="1552372194111" duration="6091000" />
+      <workItem from="1552372194111" duration="8146000" />
     </task>
     <task id="LOCAL-00001" summary="Edit">
       <created>1552373729012</created>
@@ -303,11 +311,18 @@
       <option name="project" value="LOCAL" />
       <updated>1552374072511</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Исправил отображение помеченных на удаление">
+      <created>1552378331823</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1552378331823</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49309000" />
+    <option name="totallyTimeSpent" value="51364000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -335,6 +350,29 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.32995737" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17377399" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.4989339" weight="0.32900432" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32900432" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.33441558" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4989339" weight="0.32900432" />
+      <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info anchor="bottom" id="PHP-CGI Server" order="11" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32900432" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5010661" side_tool="true" weight="0.32900432" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32995737" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -368,7 +406,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Edit" />
     <MESSAGE value="Edit2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit2" />
+    <MESSAGE value="Исправил отображение помеченных на удаление" />
+    <MESSAGE value="Исправил отображение пользователей" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправил отображение пользователей" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/register.php">
@@ -403,13 +443,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="16" lean-forward="true" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="54" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -510,20 +543,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/group.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="54" selection-start-line="39" selection-start-column="54" selection-end-line="39" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/subgroup.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -531,13 +550,6 @@
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/subcat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -555,13 +567,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="63" selection-start-line="59" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/group.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="54" selection-start-line="39" selection-start-column="54" selection-end-line="39" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subcat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="70" selection-start-line="64" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/delMarkedContent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="320" column="5" selection-start-line="320" selection-start-column="5" selection-end-line="320" selection-end-column="5" />
+        <state relative-caret-position="301">
+          <caret line="298" column="44" selection-start-line="298" selection-start-column="34" selection-end-line="298" selection-end-column="44" />
           <folding>
             <element signature="n#style#0;n#input#0;n#form#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/usersContent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="59" column="25" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
         </state>
       </provider>
     </entry>
