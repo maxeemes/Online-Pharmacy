@@ -35,7 +35,11 @@ echo 			<<<HTML
 <div class="card col-sm-4 mb-2" style="width: 18rem;">
   <div class="card-body">
     <img class="card-img-top" src="{$array2[$i]}" alt="Card image cap">
-    <form method="post"><a href="subcat.php?cat={$array1[$i]}" name="text" class="btn btn-primary">{$array1[$i]}</a> <input type="submit"  name="groupDelBTN" value="Удалить" class="btn btn-warning float-right"></form>
+    <form method="post">
+        <a href="subcat.php?cat={$array1[$i]}" name="text" class="btn btn-primary">{$array1[$i]}</a>
+        <input type="text" hidden name="text" value="{$array1[$i]}">  
+        <input type="submit"  name="groupDelBTN" value="Удалить" class="btn btn-warning float-right">
+    </form>
   </div>
 </div>
 HTML;

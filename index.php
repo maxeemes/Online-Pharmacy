@@ -17,6 +17,18 @@ if(isset($_SESSION["status"])) {
             break;
     }
 }
+$host = "localhost";
+$login = "root";
+$passwd = "";
+$db = "pharmacy_db";
+
+
+$conn = mysqli_connect($host, $login, $passwd, $db);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+    //exit;
+}
 require_once("assets/Group_info.php"); 
 if(isset($_POST['loguotBTN'])){
 	require_once "logout.php";
@@ -26,21 +38,15 @@ if(isset($_POST['RecordDelBTN'])){
 }
 if(isset($_POST['groupDelBTN'])){
 	$query = "Update category Set category_status = '0' Where category_category = '{$_POST['text']}';";
+	var_dump($query);
 	$result = mysqli_query($conn, $query);
 							echo <<<HTML
-		<meta charset='utf-8'>
-		  <link rel="stylesheet"
-  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-  crossorigin="anonymous">
-
 		<br>
 		<div class="alert alert-success" role="alert">
 			Запись помечена на удаление.
 		</div>	
 HTML;
-	sleep(2);
-	echo "<script>location.replace('index.html');</script>";
+	echo "<script>location.replace('index.php');</script>";
 }
 
 
@@ -56,8 +62,8 @@ HTML;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
-	<body>
-    <?php require_once("assets/header.php") ?>
+<?php require_once("assets/header.php") ?>
+<body>
 	<div class="container">
 		<div class="Main">
 			<div class="Nav">
