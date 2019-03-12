@@ -20,8 +20,8 @@ if($_SESSION["status"]==0) {
 				</div>
 				</a>--->
 <div class="card col-sm-4 mb-2" style="width: 18rem;">
-  <img class="card-img-top" src="{$SubCatImage[$i]}" alt="Card image cap">
   <div class="card-body">
+    <img class="card-img-top" src="{$SubCatImage[$i]}" alt="Card image cap">
     <a href="product.php?subcat={$ParentCategoryNameArray[$i]}" class="btn btn-primary">{$ParentCategoryNameArray[$i]}</a>
   </div>
 </div>
@@ -49,11 +49,12 @@ echo 			<<<HTML
 					</form>
 				</div>--->
 <div class="card col-sm-4 mb-2" style="width: 18rem;">
-  <img class="card-img-top" src="{$SubCatImage[$i]}" alt="Card image cap">
   <div class="card-body">
+    <img class="card-img-top" src="{$SubCatImage[$i]}" alt="Card image cap">
     <form method="post">
     <a href="product.php?subcat={$ParentCategoryNameArray[$i]}" name="text" class="btn btn-primary">{$ParentCategoryNameArray[$i]}</a>
-    <input type="submit"  name="groupDelBTN" value="Удалить" class="btn btn-warning float-right">
+    <input type="text" hidden name="text" value="$ParentCategoryNameArray[$i]">
+    <input type="submit"  name="subGroupDelBTN" value="Удалить" class="btn btn-warning float-right">
     </form>
   </div>
 </div>
@@ -61,7 +62,5 @@ echo 			<<<HTML
 HTML;
 				}
 			}
-
-	
 }
 ?>

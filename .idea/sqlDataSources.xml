@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDataSourceStorage">
+    <option name="dataSources">
+      <list>
+        <State>
+          <option name="id" value="89aaf7e6-7e4e-4b55-8d5e-acc5bd995d25" />
+          <option name="name" value="pharmacy_db" />
+          <option name="urls">
+            <array>
+              <option value="file://$PROJECT_DIR$/pharmacy_db.sql" />
+            </array>
+          </option>
+        </State>
+      </list>
+    </option>
+  </component>
+</project>

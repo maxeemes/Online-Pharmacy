@@ -21,7 +21,7 @@ if(isset($_POST['RecordDelBTN'])){
 
   	if (!$conn) {
   		die("Connection failed: " . mysqli_connect_error());
-      exit;
+      //exit;
   	}
 	
 	$_SESSION['RedProductName'] = $_GET['name'];
@@ -53,13 +53,13 @@ if(isset($_POST['RecordDelBTN'])){
 		else{
 			$uploadfile = $_SESSION['RedProductImage'];
 		}
-		$sql = "UPDATE `product` SET `product_name`='{$_POST['ProductName']}',`product_cost`={$_POST['ProductCost']},
+		$sql = "UPDATE `product` SET `product_cost`={$_POST['ProductCost']},
 	`product_description`='{$_POST['ProductDescription']}',`product_image`='{$uploadfile}',
 		`product_count`={$_POST['ProductCount']},`product_characteristic`='{$CHARACTERISTICS}'
-		 WHERE `product_id` = {$_SESSION['RedProductId']};";
-		 //var_dump($sql);
-		//$result = mysqli_query($conn, $sql);
-		//	echo "<script>location.replace('detailProduct.php?ParentProductName={$_POST['ProductName']}');</script>";							
+		 WHERE `product_name` = '{$_POST['ProductName']}';";
+		 var_dump($sql);
+		$result = mysqli_query($conn, $sql);
+		echo "<script>location.replace('detailProduct.php?ParentProductName={$_POST['ProductName']}');</script>";
 			
 			}
 	
@@ -78,7 +78,7 @@ if(isset($_POST['RecordDelBTN'])){
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<script src="js/addProduct.js"></script>
+<!---<script src="js/addProduct.js"></script>--->
 </head>
 <body>
     <?php require_once("/assets/header.php") ?>
@@ -86,13 +86,19 @@ if(isset($_POST['RecordDelBTN'])){
 		<div class="Main">
 			<div class="Nav">
 				<div class="Official">
-					<a href="index.php" style="padding-left: 1em;">Главная</a>
-				</div>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item" aria-current="page"><a href="index.php">Главная</a></li>
+                            <li class="breadcrumb-item" aria-current="page"><a href="subcat.php?cat=<?php echo $_SESSION["ParentCatetegoryName"];?>"><?php echo $_SESSION["ParentCatetegoryName"]; ?></a></li>
+                            <li class="breadcrumb-item" aria-current="page"><a href="product.php?subcat=<?php echo $_SESSION["ParentSubCatetegoryName"];?>"><?php echo $_SESSION["ParentSubCatetegoryName"]; ?></a> </li>
+                        </ol>
+                    </nav>
+                </div>
 			</div>
 			<div class="Content">		
 				<h1 class="display-4">Редактирование товара</h1>	
 				<form method='post' enctype=multipart/form-data>								
-				<div style="display:flex; width:100%;">
+				<div>
 					<h3>Наименование товара</h3>
 					<input class="form-control" maxlength=100 type='text' value="<?php echo $_SESSION['RedProductName']; ?>" name='ProductName' required readonly>
 					<h3>Стоимость товара</h3>
@@ -121,7 +127,7 @@ HTML;
 				</div>
 				<h3>Описание товара</h3>
 				<textarea name="ProductDescription" maxlength=512 required style="width: 100%; height: 8em;"><?php echo $_SESSION['RedProductDescription'];?></textarea>
-				<input class="btn btn-outline-primary" type="submit" value="Редактировать товар" name="RedInsertProduct">
+				<input class="btn btn-primary btn-block btn-lg" type="submit" value="Редактировать товар" name="RedInsertProduct">
 				</form>				
 			</div>
 		</div>
