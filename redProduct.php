@@ -78,10 +78,10 @@ if(isset($_POST['RecordDelBTN'])){
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<!---<script src="js/addProduct.js"></script>
+<!---<script src="js/addProduct.js"></script>--->
 </head>
 <body>
-    <?php require_once("assets/header.php") ?>
+    <?php require_once("/assets/header.php") ?>
     <div class="container">
 		<div class="Main">
 			<div class="Nav">
@@ -127,7 +127,7 @@ HTML;
 				</div>
 				<h3>Описание товара</h3>
 				<textarea name="ProductDescription" maxlength=512 required style="width: 100%; height: 8em;"><?php echo $_SESSION['RedProductDescription'];?></textarea>
-				<input class="btn btn-outline-primary" type="submit" value="Редактировать товар" name="RedInsertProduct">
+				<input class="btn btn-primary btn-block btn-lg" type="submit" value="Редактировать товар" name="RedInsertProduct">
 				</form>				
 			</div>
 		</div>
