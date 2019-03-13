@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 15, 2019 at 02:14 PM
+-- Generation Time: Mar 13, 2019 at 09:16 AM
 -- Server version: 5.6.37
 -- PHP Version: 5.5.38
 
@@ -45,7 +45,19 @@ CREATE TABLE `category` (
 INSERT INTO `category` (`category_id`, `category_category`, `category_status`, `category_sub`, `category_image`) VALUES
 (1, 'Сердечные', '1', 'null', 'img/cats/5.png'),
 (2, 'Витамины', '1', 'null', 'img\\cats\\5.png'),
-(8, 'пРОТИВОПРОСТУДНЫЕ', '1', '2', 'imgcats5.png');
+(8, 'пРОТИВОПРОСТУДНЫЕ', '1', '2', 'img/cats/5.png'),
+(9, 'от головы', '1', 'null', 'img/cats/5.png'),
+(10, 'sgdg', '1', 'null', 'img/cats/5.png'),
+(11, 'dsfdf', '1', 'null', 'img/cats/5.png'),
+(12, 'sfdsdf', '1', 'null', 'img/cats/5.png'),
+(13, 'fsdsdf', '1', 'null', 'img/cats/5.png'),
+(14, 'sgsdg', '1', 'null', 'img/cats/5.png'),
+(15, 'grgerg', '1', '1', 'img/subcats/5.png'),
+(16, 'vitamin', '1', '2', 'img/subcats/5.png'),
+(17, 'LOGOTIPS', '1', 'null', './img/cats/logotip.jpg'),
+(18, 'logotip', '1', '2', './img/subcats/logotip.jpg'),
+(19, '34234', '1', '10', 'img/subcats/5.png'),
+(20, '324', '1', '9', 'img/subcats/5.png');
 
 -- --------------------------------------------------------
 
@@ -55,11 +67,24 @@ INSERT INTO `category` (`category_id`, `category_category`, `category_status`, `
 
 CREATE TABLE `customer` (
   `customer_id` int(11) NOT NULL,
-  `customer_type` enum('0','1') NOT NULL,
+  `customer_type` int(11) NOT NULL,
   `customer_name` varchar(150) NOT NULL,
   `customer_adress` varchar(100) NOT NULL,
-  `customer_phone` varchar(11) NOT NULL
+  `customer_phone` varchar(11) NOT NULL,
+  `customer_status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`customer_id`, `customer_type`, `customer_name`, `customer_adress`, `customer_phone`, `customer_status`) VALUES
+(4, 1, 'gfdgsd fdgfdgsdf gdfgdsfgdf', 'gdfgsfgsdf', '9999999999', 1),
+(5, 1, 'Организа', 'Адддддддддд', '234234234', 1),
+(6, 1, 'Фам Им Отч', 'Аддр', '88888888888', 1),
+(7, 1, 'выаыва выаыва ываыва', 'аыва', '32432432432', 1),
+(8, 1, 'авыа выаыва ваыва', 'ываыв', '423432', 1),
+(9, 0, 'выаыва выаыва ваыаыв', 'ываы', '66666666666', 1);
 
 -- --------------------------------------------------------
 
@@ -74,8 +99,16 @@ CREATE TABLE `deal` (
   `deal_count` varchar(255) NOT NULL,
   `deal_date` varchar(10) NOT NULL,
   `deal_delivery_type` enum('0','1') NOT NULL,
-  `deal_cost` int(15) NOT NULL
+  `deal_cost` int(15) NOT NULL,
+  `deal_status` enum('1','0') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `deal`
+--
+
+INSERT INTO `deal` (`deal_id`, `deal_name_customer`, `deal_product_name`, `deal_count`, `deal_date`, `deal_delivery_type`, `deal_cost`, `deal_status`) VALUES
+(1, 'Организа', 'sadas;asfsadfd;5345', '1;1;1', '13.03.19', '0', 4836, '1');
 
 -- --------------------------------------------------------
 
@@ -126,7 +159,20 @@ INSERT INTO `product` (`product_id`, `product_name`, `product_cost`, `product_de
 (2, 'таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка ', 220000, 'таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка ', './img/5.png', 1, 'таблетка - таблетка', 1, '1'),
 (3, 'таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка ', 230000, 'таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка ', 'img/5.png', 1, 'таблетка - таблетка', 2, '1'),
 (5, 'gdfg', 231, 'fgdydtyd', 'img/products/5.png', 12, 'ert-ret;-', 8, '1'),
-(7, 'аыуа', 34, '3424', 'img/products/5.png', 432, '234-324;234-3424', 8, '1');
+(7, 'аыуа', 34, '3424', 'img/products/5.png', 432, '234-324;234-3424', 8, '1'),
+(8, 'sadas', 321, '123243254365787', 'img/products/5.png', 1128, '2313-231', 15, '1'),
+(9, 'asfsadfd', 234, 'sada', 'img/products/5.png', 2429, 'asd-sda', 15, '1'),
+(11, '5345', 4535, '435435', 'img/products/5.png', 435340, '545435-5435', 15, '1'),
+(12, '342', 121, 'описание', 'img/products/5.png', 32424, '4324-4324', 16, '1'),
+(13, '21312', 321321, '123123', 'img/products/5.png', 2313, '23123-32131', 16, '1'),
+(14, '2134123', 3131, '3213', 'img/products/5.png', 213123, '3123-123123', 16, '1'),
+(15, '3423553', 234, '34234', 'img/products/5.png', 466456, '23434-34234', 16, '1'),
+(16, '2342344', 324234, '234234234', 'img/products/5.png', 4234343, '34324-234234234', 16, '1'),
+(17, '6546345', 3424, '4223423', 'img/products/5.png', 32434, '2344-324324', 16, '1'),
+(18, '8766', 454576, '5443534', 'img/products/5.png', 545636, '342-46346', 16, '1'),
+(19, '4363543', 87, '4354534', 'img/products/5.png', 35345, '435435-45345', 16, '1'),
+(20, '43645u8767', 324246, '43535', 'img/products/logotip.jpg', 435345, '3545-5435345', 16, '1'),
+(21, '9999999999999', 213, 'fdsfsdsdf', 'img/products/5.png', 31223, '312-123123;32432423-32432432;3432423-3423423;9999999-999999', 16, '1');
 
 --
 -- Indexes for dumped tables
@@ -170,22 +216,22 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `deal`
 --
 ALTER TABLE `deal`
-  MODIFY `deal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `deal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;COMMIT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
