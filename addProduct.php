@@ -81,6 +81,7 @@ function get() {
 //////////////////////////////////////////////////////	
 					if(isset($_POST['addCat'])){ 
 					echo "<script>document.getElementById('form').style.background-color = 'red';</script>";
+
 					echo	<<<HTML
 						<form method='post'>
 						<h4>Название категории</h4>
@@ -204,7 +205,7 @@ function CharacteristicDel(){
 				<b>Наименование</b>
 				<input class="form-control" type='text' maxlength=50 name='CharacteristicName0' required>
 				<b>Значение</b>
-				<input class="form-control" type='text' maxlength=15 name='ProductNameValue0' required>
+				<input class="form-control" type='text' maxlength=50 name='ProductNameValue0' required>
 				<div id='hered'></div>
 				<input class="btn btn-primary btn-block" type='button' value='Добавить новую характеристику' onClick="CharacteristicAdd()" name='AddCharacteristic'>
 				<input class="btn btn-danger btn-block" type='button' value='Удалить последнее' name='ResetCharacteristic' onClick="CharacteristicDel()" >

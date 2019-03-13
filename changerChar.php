@@ -19,7 +19,7 @@ session_start();
 				<b>Наименование</b>
 				<input class="form-control" type='text' maxlength=50 name='CharacteristicName{$cat}' required>
 				<b>Значение</b>
-				<input class="form-control" type='text' maxlength=15 name='ProductNameValue{$cat}' required>
+				<input class="form-control" type='text' maxlength=50 name='ProductNameValue{$cat}' required>
 				</div>
 HTML;
 	
