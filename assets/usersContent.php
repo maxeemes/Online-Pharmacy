@@ -103,7 +103,7 @@ HEREDOC;
                     <td>{$row['login']}</td>
                     <td>{$row['password']}</td>
                     <td>{$type}</td>
-					<td><a name=\"del_id\" href=\users.php?del_id={$row["login"]}>Удалить</a></td>
+					<td><a class="btn btn-danger" name=\"del_id\" href=\users.php?del_id={$row["login"]}>Удалить</a></td>
                     </tr>
 HEREDOC;
 						  $ModifyName = '';

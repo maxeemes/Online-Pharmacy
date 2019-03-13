@@ -31,7 +31,9 @@ if(isset($_SESSION["status"])) {
           {$_SESSION['login']}
         </a>
         <form method="post" class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <input type="submit"  name="loguotBTN" value="Завершить сеанс" class="dropdown-item">        
+          <a class="dropdown-item" href="deals.php">Сделки</a>
+          <div class="dropdown-divider"></div>
+          <input type="submit"  name="loguotBTN" value="Завершить сеанс" class="dropdown-item">
         </form>
       </li>
       <li class="nav-item">
@@ -66,7 +68,7 @@ HTML;
         <a class="nav-link" href="customers.php">Заказчики</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="deals.php">Покупки</a>
+        <a class="nav-link" href="deals.php">Сделки</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="addProduct.php">Добавление</a>
@@ -113,7 +115,7 @@ HTML;
         <a class="nav-link" href="customers.php">Заказчики</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="deals.php">Покупки</a>
+        <a class="nav-link" href="deals.php">Сделки</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="users.php">Пользователи</a>

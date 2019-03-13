@@ -29,16 +29,12 @@ if(isset($_POST['RecordDelBTN'])){
 <?php require_once("assets/header.php") ?>
 	<div class="container">
 		<div class="Main">
-			<div class="Nav">
-				<div class="Official">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item" aria-current="page"><a href="index.php">Главная</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Пользователи</li>
-                        </ol>
-                    </nav>
-				</div>
-			</div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item" aria-current="page"><a href="index.php">Главная</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Пользователи</li>
+                </ol>
+            </nav>
 			<div class="Content">
 			    <?php require_once("assets/usersContent.php") ?>
 			</div>

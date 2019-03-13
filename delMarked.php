@@ -3,6 +3,7 @@ session_start();
 if(empty($_SESSION['login'])){
 	header('Location: login.php');
 }
+if($_SESSION['status'] == 0) header('Location: index.php');
 if(isset($_POST['loguotBTN'])){
 	require_once "logout.php";
 }

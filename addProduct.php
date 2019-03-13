@@ -3,6 +3,7 @@ session_start();
 if(empty($_SESSION['login'])){
 	header('Location: login.php');
 }
+if($_SESSION['status'] == 0) header('Location: index.php');
 if(isset($_POST['loguotBTN'])){
 	require_once "logout.php";
 }
@@ -61,20 +62,17 @@ function get() {
 <?php require_once("/assets/header.php") ?>
 <div class="container">
 		<div class="Main">
-            <div class="Nav">
-                <div class="Official">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item active" aria-current="page">Главная</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item" aria-current="page"><a href="index.php">Главная</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Добавление</li>
+                </ol>
+            </nav>
             <div class="Content">
 				<h1>Добавление товара</h1>
 					<form method='post'>
-						<input type="submit" class="btn btn-outline-primary" name="addCat" value="Добавить категорию">
-						<input type="submit" class="btn btn-outline-primary" name="addSubCat" value="Добавить подкатегорию">
+						<input type="submit" class="btn btn-primary" name="addCat" value="Добавить категорию">
+						<input type="submit" class="btn btn-primary" name="addSubCat" value="Добавить подкатегорию">
 					</form>
             </div>
 				<?php
@@ -86,10 +84,10 @@ function get() {
 					echo	<<<HTML
 						<form method='post'>
 						<h4>Название категории</h4>
-						<input type="text" name="inputCatName">
+						<input class="form-control" type="text" name="inputCatName">
 							<form  method=post enctype=multipart/form-data>
-							    <input type="submit" class="form-control"  name="addCatImg" value="Далее">
-							    <input type="submit"  class="form-control" name="addCatCansel" value="Отмена">
+							    <input type="submit" class="btn btn-primary btn-block"  name="addCatImg" value="Далее">
+							    <input type="submit"  class="btn btn-danger btn-block" name="addCatCansel" value="Отмена">
 							</form>					
 						</form>
 						
@@ -133,10 +131,10 @@ HTML;
 					echo <<<HTML
 						</select>		
 						<h4>Название подкатегории</h4>
-						<input type="text" name="inputSubCatName">
+						    <input class="form-control" type="text" name="inputSubCatName">
 							<form  method=post enctype=multipart/form-data>
-							<input class="form-control" type="submit"  name="addSubCatImg" value="Далее">
-							<input class="form-control" type="submit"  name="addSubCatCansel" value="Отмена">
+							<input class="btn btn-primary btn-block" type="submit"  name="addSubCatImg" value="Далее">
+							<input class="btn btn-danger btn-block" type="submit"  name="addSubCatCansel" value="Отмена">
 							</form>										
 						</form>						
 HTML;
@@ -208,10 +206,10 @@ function CharacteristicDel(){
 				<b>Значение</b>
 				<input class="form-control" type='text' maxlength=15 name='ProductNameValue0' required>
 				<div id='hered'></div>
-				<input class="form-control" type='button' value='Добавить новую характеристику' onClick="CharacteristicAdd()" name='AddCharacteristic'>
-				<input class="form-control" type='button' value='Удалить последнее' name='ResetCharacteristic' onClick="CharacteristicDel()" >
+				<input class="btn btn-primary btn-block" type='button' value='Добавить новую характеристику' onClick="CharacteristicAdd()" name='AddCharacteristic'>
+				<input class="btn btn-danger btn-block" type='button' value='Удалить последнее' name='ResetCharacteristic' onClick="CharacteristicDel()" >
 				
-				<h3 style="margin-top: 1.3%">Описание товара</h3>
+				<h3>Описание товара</h3>
 				<textarea class="form-control" name="ProductDescription" maxlength=512 required></textarea>
 				<input class="btn btn-primary btn-lg btn-block" type="submit" value="Добавить товар" name="InsertProduct">
 				</form>

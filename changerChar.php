@@ -7,7 +7,7 @@ session_start();
   	$db = "pharmacy_db";
 	
 
-  	$conn = mysqli_connect($host, $login, $password, $db);
+  	$conn = mysqli_connect($host, $login, $passwd, $db);
 
   	if (!$conn) {
   		die("Connection failed: " . mysqli_connect_error());

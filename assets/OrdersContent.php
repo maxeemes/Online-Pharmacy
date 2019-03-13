@@ -12,7 +12,7 @@ $conn = mysqli_connect($host, $login, $passwd, $db);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-	require_once('helper.php');
+require_once('helper.php');
 $ProductOrderArray = explode(';',$_SESSION['BascketNameString']);
 unset($ProductOrderArray[0]);
 if($ProductOrderArray != Null) {
@@ -62,13 +62,26 @@ HTML;
         $productCostArray = intval($productCostArray);
     }
     $_SESSION['ProductCostArray'] = $ProductCostArray;
-    echo <<<HTML
+    if ($_SESSION["status"] != 0) {
+        echo <<<HTML
 		</table>
 		<div>
 		<h3>Заказчик</h3>
 		<select class="form-control" name='CustomerSelect'>
 		<option>---Выберите заказчика---</option>
 HTML;
+    }
+    else{
+        echo <<<HTML
+		</table>
+		<div>
+		<h3>Адрес</h3>
+		<select class="form-control" name='CustomerSelect'>
+		<option>---Выберите адрес---</option>
+HTML;
+    }
+    if ($_SESSION["status"]!= 0) $NovZak = "Новый заказчик";
+    else $NovZak = "Новый адрес";
     for ($i = 0; $i < count($_SESSION["Customers"]); $i++) {
         echo <<<HTML
 				<option>{$_SESSION["Customers"][$i]}</option>
@@ -76,7 +89,7 @@ HTML;
     }
     echo <<<HTML
 		<select>
-		    <input type="submit"  name="NewCuctomerBTN" value="Новый заказчик" class="btn btn-outline-primary float-right">
+		    <input type="submit"  name="NewCuctomerBTN" value="{$NovZak}" class="btn btn-outline-primary float-right">
 		</div>
 		<br>
 		<div>
@@ -106,13 +119,17 @@ HTML;
             $result2 = mysqli_query($conn, $sql);
             $RealProductCount = mysqli_fetch_assoc($result2);
             $RealProductCount = $RealProductCount["product_count"];
+            $Count = 'count' . $i;
+            $CountArray[$i] = $_POST[$Count];
+            $RealMinusWriteCount = (int)$RealProductCount - (int)$CountArray[$i];
+            $_SESSION['FINALYCOST'] += $CountArray[$i] * $_SESSION['ProductCostArray'][$i];
+            $BuyCountArray[$i] = $RealMinusWriteCount;
 
 
-
-            if ($RealMinusWriteCount >= 0) {
+            if ((int)$RealMinusWriteCount >= 0) {
 
                 if ($_POST['count'.$i] == "" or $_POST['CustomerSelect'] == '---Выберите заказчика---' or
-                    $_POST['DeliveryTypeSelect'] == '---Выберите тип доставки---') {
+                    $_POST['DeliveryTypeSelect'] == '---Выберите тип доставки---' or $_POST['CustomerSelect'] == '---Выберите адрес---') {
 
                     echo <<<HTML
 				<div class="alert alert-danger" role="alert">
@@ -123,11 +140,6 @@ HTML;
                     $AllRight = 1;
                     break;
                 } else {
-                    $Count = 'count' . $i;
-                    $CountArray[$i] = $_POST[$Count];
-                    $RealMinusWriteCount = (int)$RealProductCount - (int)$CountArray[$i];
-                    $_SESSION['FINALYCOST'] += $CountArray[$i] * $_SESSION['ProductCostArray'][$i];
-                    $BuyCountArray[$i] = $RealMinusWriteCount;
                 }
             }else {
                 echo <<<HTML
@@ -140,14 +152,31 @@ HTML;
         }
         $_SESSION['BuyCountArray'] = $BuyCountArray;
         $_SESSION['ProductOrderArray'] = $ProductOrderArray;
-
         if ($AllRight == Null) {
             $CountArrayToString = implode(";", $CountArray);
             $ProductOrderArrayToString = implode(";", $ProductOrderArray);
 
             $_SESSION['CountArrayToString'] = $CountArrayToString;
             $_SESSION['ProductOrderArrayToString'] = $ProductOrderArrayToString;
-            $_SESSION['CustomerSelect'] = $_POST['CustomerSelect'];
+            if($_SESSION['status'] != 0) $_SESSION['CustomerSelect'] = $_POST['CustomerSelect'];
+            else {
+                $sql = "SELECT customer_name FROM customer WHERE customer_adress ='{$_POST['CustomerSelect']}';";
+                $result = mysqli_query($conn, $sql);
+                if($result){
+                    while($row = mysqli_fetch_array($result))
+                    {
+                        $_SESSION['CustomerSelect'] = $row[0];
+                    }
+                }
+                else {
+                    echo <<<HTML
+			<div class="alert alert-danger" role="alert">
+				В поле номер {$i} было введено количество товара, превышающее его наличие на складе равное {$RealProductCount}!
+			</div>
+HTML;
+                }
+            }
+
             $_SESSION['DeliveryTypeSelect'] = $_POST['DeliveryTypeSelect'];
 
             if($_SESSION['DeliveryTypeSelect'] == 'Самовывоз'){
@@ -188,17 +217,16 @@ if(isset($_POST['YES'])){
 		$result=mysqli_query($conn, $sql);
 	}
 
-
-	$query = "Insert Into deal (`deal_name_customer`, `deal_product_name`, `deal_count`, `deal_date`, `deal_delivery_type`, `deal_cost`,deal_status) Values (
+	$query = "Insert Into deal (`deal_name_customer`, `deal_product_name`, `deal_count`, `deal_date`, `deal_delivery_type`, `deal_cost`,deal_status,deal_user) Values (
                               '{$_SESSION['CustomerSelect']}',
                                                     '{$_SESSION['ProductOrderArrayToString']}'
 	                                                                      ,'{$_SESSION['CountArrayToString']}',
                                                                                         '{$today}',
                                                                                                       '{$_SESSION['DeliveryTypeSelect']}',
                                                                                                                                {$_SESSION['FINALYCOST']},
-                                                                                                                                               '1');";
+                                                                                                                                               '1',
+                                                                                                                                                  '{$_SESSION['login']}');";
 	$result=mysqli_query($conn, $query);
-	var_dump($result);
 	if($result == true){
 		echo <<<HTML
 			<div class="alert alert-success" role="alert">
