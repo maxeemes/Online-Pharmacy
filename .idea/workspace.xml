@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="accb8ac9-a46e-479b-b05b-3328e0518424" name="Default Changelist" comment="Обновил БД сделал все кроме напонения">
-      <change beforePath="$PROJECT_DIR$/addProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/addProduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/changerChar.php" beforeDir="false" afterPath="$PROJECT_DIR$/changerChar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/cats/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/cats/5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/products/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/products/5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/subcats/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/subcats/5.png" afterDir="false" />
-    </list>
+    <list default="true" id="accb8ac9-a46e-479b-b05b-3328e0518424" name="Default Changelist" comment="Обновил БД сделал все кроме напонения" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -321,7 +315,7 @@
       <workItem from="1552286514775" duration="17866000" />
       <workItem from="1552364463453" duration="3053000" />
       <workItem from="1552372194111" duration="20626000" />
-      <workItem from="1552450788224" duration="23643000" />
+      <workItem from="1552450788224" duration="24147000" />
     </task>
     <task id="LOCAL-00001" summary="Edit">
       <created>1552373729012</created>
@@ -383,7 +377,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87487000" />
+    <option name="totallyTimeSpent" value="87991000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

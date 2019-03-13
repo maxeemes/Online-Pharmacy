@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 13, 2019 at 02:42 PM
+-- Generation Time: Mar 13, 2019 at 04:08 PM
 -- Server version: 5.6.37
 -- PHP Version: 5.5.38
 
@@ -43,22 +43,25 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`category_id`, `category_category`, `category_status`, `category_sub`, `category_image`) VALUES
-(1, 'Сердечные', '1', 'null', 'img/cats/5.png'),
-(2, 'Витамины', '1', 'null', 'img\\cats\\5.png'),
-(8, 'пРОТИВОПРОСТУДНЫЕ', '1', '2', 'img/cats/5.png'),
-(9, 'от головы', '1', 'null', 'img/cats/5.png'),
-(10, 'sgdg', '1', 'null', 'img/cats/5.png'),
-(11, 'dsfdf', '1', 'null', 'img/cats/5.png'),
-(12, 'sfdsdf', '1', 'null', 'img/cats/5.png'),
-(13, 'fsdsdf', '1', 'null', 'img/cats/5.png'),
-(14, 'sgsdg', '1', 'null', 'img/cats/5.png'),
-(15, 'grgerg', '1', '1', 'img/subcats/5.png'),
-(16, 'vitamin', '1', '2', 'img/subcats/5.png'),
-(17, 'LOGOTIPS', '1', 'null', './img/cats/logotip.jpg'),
-(18, 'logotip', '1', '2', './img/subcats/logotip.jpg'),
-(19, '34234', '1', '10', 'img/subcats/5.png'),
-(20, '324', '1', '9', 'img/subcats/5.png'),
-(21, 'logo', '1', '17', 'img/subcats/5.png');
+(22, 'Лекарственные препараты', '1', 'null', './img/cats/лекарственные_препараты.PNG'),
+(23, 'БАД', '1', 'null', './img/cats/fsd.PNG'),
+(24, 'Медицинские изделия', '1', 'null', './img/cats/medizd.PNG'),
+(25, 'Медтехника', '1', 'null', './img/cats/tech.PNG'),
+(26, 'Гигиена', '1', 'null', './img/cats/Gigiena.PNG'),
+(27, 'АНТИБАКТЕРИАЛЬНЫЕ СРЕДСТВА', '1', '22', './img/subcats/Bakterial.PNG'),
+(28, 'Иммунная система', '1', '22', './img/subcats/imun.PNG'),
+(29, 'От аллергии', '1', '22', './img/subcats/Allerg.PNG'),
+(30, 'БАДЫ - ВИТАМИНЫ', '1', '23', './img/subcats/BADvit.PNG'),
+(31, 'БАДЫ ДЛЯ ГЛАЗ', '1', '23', './img/subcats/BADglaz.PNG'),
+(32, 'БАДЫ ДЛЯ КОЖИ, ВОЛОС, НОГТЕЙ', '1', '23', './img/subcats/UQWWLpp55suNvuaj3Uarkw.png'),
+(33, 'АППЛИКАТОРЫ, ИППЛИКАТОРЫ', '1', '24', './img/subcats/applikator-lyapko-malysh.jpg'),
+(34, 'АПТЕЧКИ', '1', '24', './img/subcats/1014632741.jpg'),
+(35, 'ПЕРЕВЯЗОЧНЫЕ МАТЕРИАЛЫ', '1', '24', './img/subcats/reha_haft.jpg'),
+(36, 'ГЛЮКОМЕТРЫ, ЛАНЦЕТЫ, ТЕСТ-ПОЛОСКИ', '1', '25', './img/subcats/280_280_1.jpg'),
+(37, 'ИНГАЛЯТОРЫ, НЕБУЛАЙЗЕРЫ', '1', '25', './img/subcats/download.jpg'),
+(38, 'МАССАЖЕРЫ', '1', '25', './img/subcats/6Hj4UL48ftVPSomSygcgw.jpg'),
+(40, 'СРЕДСТВА ОТ ПОТА', '1', '26', './img/subcats/algel-ot-pota-1.jpg'),
+(41, 'УХОД ЗА ПОЛОСТЬЮ РТА', '1', '26', './img/subcats/article2324.jpg');
 
 -- --------------------------------------------------------
 
@@ -172,24 +175,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `product_name`, `product_cost`, `product_description`, `product_image`, `product_count`, `product_characteristic`, `product_category`, `product_status`) VALUES
-(1, 'аврпва', 200000, 'ваываывавыаымвымывс', 'img\\cats\\5.png', 34, 'вапва', 1, '1'),
-(2, 'таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка ', 220000, 'таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка ', './img/5.png', 1, 'таблетка - таблетка', 1, '1'),
-(3, 'таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка ', 230000, 'таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка таблетка ', 'img/5.png', 1, 'таблетка - таблетка', 2, '1'),
-(5, 'gdfg', 231, 'fgdydtyd', 'img/products/5.png', 12, 'ert-ret;-', 8, '1'),
-(7, 'аыуа', 34, '3424', 'img/products/5.png', 432, '234-324;234-3424', 8, '1'),
-(8, 'sadas', 321, '123243254365787', 'img/products/5.png', 1121, '2313-231', 15, '1'),
-(9, 'asfsadfd', 234, 'sada', 'img/products/5.png', 2425, 'asd-sda', 15, '1'),
-(11, '5345', 4535, '435435', 'img/products/5.png', 434339, '545435-5435', 15, '1'),
-(12, '342', 121, 'описание', 'img/products/5.png', 32424, '4324-4324', 16, '1'),
-(14, '2134123', 3131, '3213', 'img/products/5.png', 213123, '3123-123123', 16, '1'),
-(15, '3423553', 234, '34234', 'img/products/5.png', 466455, '23434-34234', 16, '1'),
-(16, '2342344', 324234, '234234234', 'img/products/5.png', 4234343, '34324-234234234', 16, '1'),
-(17, '6546345', 3424, '4223423', 'img/products/5.png', 32434, '2344-324324', 16, '1'),
-(18, '8766', 454576, '5443534', 'img/products/5.png', 545636, '342-46346', 16, '1'),
-(19, '4363543', 87, '4354534', 'img/products/5.png', 35345, '435435-45345', 16, '1'),
-(20, '43645u8767', 324246, '43535', 'img/products/logotip.jpg', 435345, '3545-5435345', 16, '1'),
-(21, '9999999999999', 213, 'fdsfsdsdf', 'img/products/5.png', 31223, '312-123123;32432423-32432432;3432423-3423423;9999999-999999', 16, '1'),
-(22, '34232434', 324234, '324234324', 'img/products/5.png', 34234, '3424-342234;234234-34234', 21, '1');
+(23, 'Бетадин р-р местн и наруж 10% 30мл n1', 171, 'Антисептическое, дезинфицирующее.Для обработки кожи и слизистых оболочек применяют в неразбавленном виде для смазывания, промывания или в виде влажного компресса. Для применения в дренажных системах 10% раствор разбавляют от 10 до 100 раз. Раствор приготавливают непосредственно перед применением, разбавленные растворы не хранят.', 'img/products/photo_es_EF254B80-3A9B-4DAE-92B6-D0BA5EDEA905.jpg', 100, 'Показания-лечение и профилактика раневых инфекций в хирургии;Побочные действия-может произойти системная реабсорбция йода;Противопоказания-аденома щитовидной железы', 27, '1'),
+(24, 'Цефтриаксон пор. д/пригот. р-ра в/в и в/м введ. 1г фл. №1', 33, 'АО \"Рафарма\", Российская Федерация, Показания: Бактериальные инфекции, вызванные чувствительными микроорганизмами: инфекции органов брюшной полости (перитонит, воспалительные заболевания ЖКТ, желчевыводящих путей, в т.ч. холангит, эмпиема желчного пузыря), инфекции органов малого таза, инфекции нижних дыхательных путей (в т.ч. пневмония, абсцесс легких, эмпиема плевры).', 'img/products/photo_es_56D49F5F-FC4B-0619-5E05-3E30A030ADCF.jpg', 100, 'Показания-Инфекционно-воспалительные заболевания, вызванные;Противопоказания-Повышенная чувствительность к цефтриаксону и други;Побочные действия-тошнота, рвота, диарея;-', 27, '1');
 
 --
 -- Indexes for dumped tables
@@ -233,7 +220,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT for table `customer`
 --
@@ -248,7 +235,7 @@ ALTER TABLE `deal`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;COMMIT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
