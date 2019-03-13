@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 
 
 if($_SESSION["status"]==0){
@@ -28,7 +28,8 @@ echo 			<<<HTML
   <p class="card-text">{$_SESSION["ProductCostsArray"][$i]} руб.</p>
     <a href="detailProduct.php?ParentProductName={$_SESSION["ProductNamesArray"][$i]}" class="btn btn-primary">Подробнее</a>
     <form method="post">
-    <input type="submit"  name="orderBTN" value="Заказ" class="btn btn-primary float-right">
+        <input type="text" hidden name="text" value="{$_SESSION["ProductNamesArray"][$i]}">
+        <input type="submit"  name="orderBTN" value="Заказ" class="btn btn-primary float-right">
     </form>
   </div>
 </form>

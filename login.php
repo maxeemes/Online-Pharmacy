@@ -41,12 +41,13 @@
 		$_SESSION['login']=$InputLogin;
 		$_SESSION['status']=$status;
 		header('Refresh: 2; url=index.php');
-		
+        $_SESSION['BascketNameString'] = "";
 		echo <<<HTML
 		<br>
 		<div class="alert alert-success" role="alert">
 			Welcome!
 		</div>	
+        
 HTML;
 		
 		

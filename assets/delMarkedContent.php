@@ -11,10 +11,8 @@ if (isset($_POST['delNoBTN'])) {
 								Вы действительно хотите удалить запись? '{$temp}'?
 							</div>
 							<form method="post">
-							<input type="submit"  name="delYesGroup" value="Да" style="width: 49%;color: black; 
-						border-color:#010508;" class="btn btn-outline-secondary">
-						<input type="submit"  name="delNoBTN" value="Нет" style="width: 49%;color: black; 
-						border-color:#010508;" class="btn btn-outline-secondary">
+							<input type="submit"  name="delYesGroup" value="Да" style="width: 49%;" class="btn btn-danger">
+						<input type="submit"  name="delNoBTN" value="Нет" style="width: 49%;" class="btn btn-secondary">
 							</form>
 HTML;
 
@@ -69,10 +67,8 @@ HTML;
 								Вы действительно хотите удалить запись? '{$temp}'?
 							</div>
 							<form method="post">
-							<input type="submit"  name="delYesProduct" value="Да" style="width: 49%;color: black; 
-						border-color:#010508;" class="btn btn-outline-secondary">
-						<input type="submit"  name="delNoBTN" value="Нет" style="width: 49%;color: black; 
-						border-color:#010508;" class="btn btn-outline-secondary">
+							<input type="submit"  name="delYesProduct" value="Да" style="width: 49%;" class="btn btn-danger">
+						<input type="submit"  name="delNoBTN" value="Нет" style="width: 49%;" class="btn btn-secondary">
 							</form>
 HTML;
 
@@ -126,10 +122,8 @@ HTML;
 								Вы действительно хотите удалить запись? '{$temp}'?
 							</div>
 							<form method="post">
-							<input type="submit"  name="delYesCustomer" value="Да" style="width: 49%;color: black; 
-						border-color:#010508;" class="btn btn-outline-secondary">
-						<input type="submit"  name="delNoBTN" value="Нет" style="width: 49%;color: black; 
-						border-color:#010508;" class="btn btn-outline-secondary">
+							<input type="submit"  name="delYesCustomer" value="Да" style="width: 49%;" class="btn btn-danger">
+						<input type="submit"  name="delNoBTN" value="Нет" style="width: 49%;" class="btn btn-secondary">
 							</form>
 HTML;
 
@@ -193,7 +187,8 @@ HTML;
 	///////////////////////////
 	//////////////////////////
 	/////////////////////////
-	
+	$deleting = "hidden";
+	if($_SESSION['status'] == 2) $deleting = "";
 	echo <<<HTML
 		<h2>Категории</h2>
 		<table class="table table-hover">
@@ -201,7 +196,7 @@ HTML;
 						<tr>
 							<th class="TableCenter">Наименование категории</td>
 							<th class="TableCenter">Восстановление</td>
-							<th class="TableCenter">Удаление</td>
+							<th {$deleting} class="TableCenter">Удаление</td>
 						</tr>
 						</thead>
 HTML;
@@ -210,8 +205,8 @@ HTML;
 		echo <<<HEREDOC
                     <tr>
                     <td class="TableCenter">{$row['category_category']}</td>
-					<td class="TableCenter"><a name=\"redGroup\" href=\delMarked.php?redGroup={$temp}>Восстановить</a></td>
-					<td class="TableCenter"><a name=\"delGroup\" href=\delMarked.php?delGroup={$temp}>Удалить</a></td>
+					<td class="TableCenter"><a class="btn btn-primary" name=\"redGroup\" href=\delMarked.php?redGroup={$temp}>Восстановить</a></td>
+					<td {$deleting} class="TableCenter"><a class="btn btn-danger" name=\"delGroup\" href=\delMarked.php?delGroup={$temp}>Удалить</a></td>
                     </tr>
 HEREDOC;
 	}
@@ -224,7 +219,7 @@ HEREDOC;
 						<tr>
 							<th class="TableCenter">Наименование подкатегории</td>
 							<th class="TableCenter">Восстановление</td>
-							<th class="TableCenter">Удаление</td>
+							<th {$deleting} class="TableCenter">Удаление</td>
 						</tr>
 					</thead>
 HTML;
@@ -233,8 +228,8 @@ HTML;
 		echo <<<HEREDOC
                     <tr>
                     <td class="TableCenter">{$row['category_category']}</td>
-					<td class="TableCenter"><a name=\"redGroup\" href=\delMarked.php?redGroup={$temp}>Восстановить</a></td>
-					<td class="TableCenter"><a name=\"delGroup\" href=\delMarked.php?delGroup={$temp}>Удалить</a></td>
+					<td class="TableCenter"><a class="btn btn-primary" name=\"redGroup\" href=\delMarked.php?redGroup={$temp}>Восстановить</a></td>
+					<td {$deleting} class="TableCenter"><a class="btn btn-danger" name=\"delGroup\" href=\delMarked.php?delGroup={$temp}>Удалить</a></td>
                     </tr>					
 HEREDOC;
 	}
@@ -247,7 +242,7 @@ HEREDOC;
 						<tr>
 							<th class="TableCenter">Наименование товара</td>
 							<th class="TableCenter">Восстановление</td>
-							<th class="TableCenter">Удаление</td>
+							<th {$deleting} class="TableCenter">Удаление</td>
 						</tr>
 						</thead>
 HTML;
@@ -256,8 +251,8 @@ HTML;
 		echo <<<HEREDOC
                     <tr>
                     <td class="TableCenter">{$row['product_name']}</td>
-					<td class="TableCenter"><a name=\"redProduct\" href=\delMarked.php?redProduct={$temp}>Восстановить</a></td>
-					<td class="TableCenter"><a name=\"delProduct\" href=\delMarked.php?delProduct={$temp}>Удалить</a></td>
+					<td class="TableCenter"><a class="btn btn-primary" \"redProduct\" href=\delMarked.php?redProduct={$temp}>Восстановить</a></td>
+					<td {$deleting} class="TableCenter"><a class="btn btn-danger" name=\"delProduct\" href=\delMarked.php?delProduct={$temp}>Удалить</a></td>
                     </tr>					
 HEREDOC;
 	}
@@ -271,7 +266,7 @@ HEREDOC;
 						<tr>
 							<th class="TableCenter">Наименование</td>
 							<th class="TableCenter">Восстановление</td>
-							<th class="TableCenter">Удаление</td>
+							<th {$deleting} class="TableCenter">Удаление</td>
 						</tr>
 						</thead>
 HTML;
@@ -282,8 +277,8 @@ HTML;
 			echo <<<HEREDOC
                     <tr>
                     <td class="TableCenter">{$row['customer_name']}</td>
-					<td class="TableCenter"><a name=\"redCustomer\" href=\delMarked.php?redCustomer={$temp}>Восстановить</a></td>
-					<td class="TableCenter"><a name=\"delCustomer\" href=\delMarked.php?delCustomer={$temp}>Удалить</a></td>
+					<td class="TableCenter"><a class="btn btn-primary" name=\"redCustomer\" href=\delMarked.php?redCustomer={$temp}>Восстановить</a></td>
+					<td {$deleting} class="TableCenter"><a class="btn btn-danger" name=\"delCustomer\" href=\delMarked.php?delCustomer={$temp}>Удалить</a></td>
                     </tr>					
 HEREDOC;
 		}
@@ -299,7 +294,7 @@ HEREDOC;
 							<th class="TableCenter">КонтрАгент</td>
 							<th class="TableCenter">Дата</td>
 							<th class="TableCenter">Восстановление</td>
-							<th class="TableCenter">Удаление</td>
+							<th {$deleting} class="TableCenter">Удаление</td>
 						</tr>
 						</thead>
 HTML;
@@ -310,8 +305,8 @@ HTML;
                     <tr>
                     <td class="TableCenter">{$row['deal_name_customer']}</td>
                     <td class="TableCenter">{$row['deal_date']}</td>
-					<td class="TableCenter"><a name=\"redDeal\" href=\delMarked.php?redDeal={$temp}>Восстановить</a></td>
-					<td class="TableCenter"><a name=\"delDeal\" href=\delMarked.php?delDeal={$temp}>Удалить</a></td>
+					<td class="TableCenter"><a class="btn btn-primary" name=\"redDeal\" href=\delMarked.php?redDeal={$temp}>Восстановить</a></td>
+					<td {$deleting} class="TableCenter"><a class="btn btn-danger" name=\"delDeal\" href=\delMarked.php?delDeal={$temp}>Удалить</a></td>
                     </tr>					
 HEREDOC;
 		}

@@ -7,12 +7,11 @@ session_start();
   	$db = "pharmacy_db";
 	
 
-  	$conn = mysqli_connect($host, $login, $password, $db);
+  	$conn = mysqli_connect($host, $login, $passwd, $db);
 
   	if (!$conn) {
-  		die("Connection failed: " . mysqli_connect_error());
-      exit;
-  	}
+		die("Connection failed: " . mysqli_connect_error());
+	}
 
 	$query = "SELECT deal_name_customer FROM deal Where deal_id = {$_SESSION['deal_id']};";
 	$result = mysqli_query($conn, $query);
@@ -50,4 +49,4 @@ session_start();
 	$DealCost = $DealCost["deal_cost"];
 	$_SESSION['DealCost'] = $DealCost;
 	  
-?>				
+?>

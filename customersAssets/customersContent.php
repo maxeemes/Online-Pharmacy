@@ -12,10 +12,11 @@ session_start();
   	if (!$conn) {
   		die("Connection failed: " . mysqli_connect_error());
   	}
-
+	$sqlll = "";
+  	if ($_SESSION["status"] == 0) $sqlll = "AND customer_user ='{$_SESSION['login']}'";
 $check = "SELECT * FROM customer;";
   	if (mysqli_query($conn, $check)) {
-		$show = "SELECT customer_id,customer_name, customer_type,customer_adress, customer_phone FROM customer Where customer_status != '0' ORDER BY customer_id DESC";
+		$show = "SELECT customer_id,customer_name, customer_type,customer_adress, customer_phone FROM customer Where customer_status != '0' {$sqlll} ORDER BY customer_id DESC";
 		$result = mysqli_query($conn, $show);
 		if ($result) {
 

@@ -21,6 +21,8 @@ $host = "localhost";
   	if (!$conn) {
   		die("Connection failed: " . mysqli_connect_error());
   	}
+if ($_SESSION["status"] != 0) $Custmr = "Заказчики";
+else $Custmr = "Адреса";
 ?>
 
 <!doctype.html>
@@ -34,19 +36,18 @@ $host = "localhost";
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
-<!--TODO Сделать такой бредкрамб везде-->
 <?php require_once("/assets/header.php") ?>
 	<div class="container">
 		<div class="Main">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item" aria-current="page"><a href="index.php">Главная</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Заказчики</li>
+                    <li class="breadcrumb-item active" aria-current="page"><?php echo $Custmr;?></li>
                 </ol>
             </nav>
 			<div class="Content">
 			    <div class="form-group">
-			        <h1 class="display-4">Заказчики</h1>
+			        <h1 class="display-4"><?php echo $Custmr;?></h1>
 			            <form method="post" >
 			                <select name="type_add" class="form-control" style="width: 20%">
 			                    <option>Физ. лицо</option>
@@ -81,14 +82,17 @@ HTML;*/
 						    <div>
 						        <h5>Имя</h5>
 						        <input class="form-control" type="text" required name="name_add" value="">
-						        <h5>Адресс</h5>
-						        <input class="form-control" type="text" required name="adress_add" maxlength="100" value="">
 						    </div>
 						    <br>
 						    <div>
 						        <h5>Отчество</h5>
 						        <input class="form-control" type="text" required name="patronymic_add" value="">
 						    </div>
+						    <br>
+						    <div>
+						        <h5>Адресс</h5>
+						        <input class="form-control" type="text" required name="adress_add" maxlength="100" value="">
+                            </div>
 						    <br>
 						    <div>
 						        <h5>Телефон</h5>
@@ -139,8 +143,13 @@ if (isset($_POST['addCancelBTN'])) {
 					
 if (isset($_POST['addBTNFiz'])) {
     $fio = $_POST['family_add'] . ' ' . $_POST['name_add'] . ' ' . $_POST['patronymic_add'];
-    $sql = "Insert Into customer (customer_type,customer_name,customer_adress,customer_phone,customer_status) Values
+    if($_SESSION["status"] != 0) {
+        $sql = "Insert Into customer (customer_type,customer_name,customer_adress,customer_phone,customer_status) Values
 						('0','{$fio}','{$_POST['adress_add']}','{$_POST['phone_add']}','1');";
+    } else {
+        $sql = "Insert Into customer (customer_type,customer_name,customer_adress,customer_phone,customer_status, customer_user) Values
+						('0','{$fio}','{$_POST['adress_add']}','{$_POST['phone_add']}','1', '{$_SESSION['login']}');";
+    }
     mysqli_query($conn, $sql);
     echo <<<HTML
 		<br>
@@ -153,8 +162,13 @@ HTML;
 }
 					
 if (isset($_POST['addBTNUr'])) {
-    $sql = "Insert Into customer (customer_type,customer_name,customer_adress,customer_phone,customer_status) Values
+    if ($_SESSION["status"] != 0) {
+        $sql = "Insert Into customer (customer_type,customer_name,customer_adress,customer_phone,customer_status) Values
 						('1','{$_POST['organization_add']}','{$_POST['adress_add']}','{$_POST['phone_add']}','1');";
+    } else {
+        $sql = "Insert Into customer (customer_type,customer_name,customer_adress,customer_phone,customer_status, customer_user) Values
+						('1','{$_POST['organization_add']}','{$_POST['adress_add']}','{$_POST['phone_add']}','1', '{$_SESSION['login']}');";
+    }
     mysqli_query($conn, $sql);
     echo <<<HTML
 		<br>
