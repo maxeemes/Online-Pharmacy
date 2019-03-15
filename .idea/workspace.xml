@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="accb8ac9-a46e-479b-b05b-3328e0518424" name="Default Changelist" comment="Обновил БД сделал все кроме напонения">
-      <change beforePath="$PROJECT_DIR$/addProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/addProduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/changerChar.php" beforeDir="false" afterPath="$PROJECT_DIR$/changerChar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pharmacy_db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy_db.sql" afterDir="false" />
-    </list>
+    <list default="true" id="accb8ac9-a46e-479b-b05b-3328e0518424" name="Default Changelist" comment="Обновил БД сделал все кроме напонения" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -314,7 +310,7 @@
       <workItem from="1552364463453" duration="3053000" />
       <workItem from="1552372194111" duration="20626000" />
       <workItem from="1552450788224" duration="24147000" />
-      <workItem from="1552627293339" duration="1222000" />
+      <workItem from="1552627293339" duration="1272000" />
     </task>
     <task id="LOCAL-00001" summary="Edit">
       <created>1552373729012</created>
@@ -376,7 +372,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89213000" />
+    <option name="totallyTimeSpent" value="89263000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -389,7 +385,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18496802" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
