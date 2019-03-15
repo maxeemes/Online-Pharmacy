@@ -203,9 +203,9 @@ function CharacteristicDel(){
 				<input hidden id='charact' name = "charact" value="1" class="form-control">
 				</div>
 				<b>Наименование</b>
-				<input class="form-control" type='text' maxlength=50 name='CharacteristicName0' required>
+				<input class="form-control" type='text' maxlength=100 name='CharacteristicName0' required>
 				<b>Значение</b>
-				<input class="form-control" type='text' maxlength=50 name='ProductNameValue0' required>
+				<input class="form-control" type='text' maxlength=100 name='ProductNameValue0' required>
 				<div id='hered'></div>
 				<input class="btn btn-primary btn-block" type='button' value='Добавить новую характеристику' onClick="CharacteristicAdd()" name='AddCharacteristic'>
 				<input class="btn btn-danger btn-block" type='button' value='Удалить последнее' name='ResetCharacteristic' onClick="CharacteristicDel()" >

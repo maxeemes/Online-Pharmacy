@@ -17,9 +17,9 @@ session_start();
 	echo <<<HTML
 				<div id='char{$cat}'>
 				<b>Наименование</b>
-				<input class="form-control" type='text' maxlength=50 name='CharacteristicName{$cat}' required>
+				<input class="form-control" type='text' maxlength=100 name='CharacteristicName{$cat}' required>
 				<b>Значение</b>
-				<input class="form-control" type='text' maxlength=50 name='ProductNameValue{$cat}' required>
+				<input class="form-control" type='text' maxlength=100 name='ProductNameValue{$cat}' required>
 				</div>
 HTML;
 	

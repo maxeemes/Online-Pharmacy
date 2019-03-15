@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 14, 2019 at 11:38 AM
+-- Generation Time: Mar 15, 2019 at 08:41 AM
 -- Server version: 5.6.37
 -- PHP Version: 5.5.38
 
@@ -166,7 +166,7 @@ CREATE TABLE `product` (
   `product_description` varchar(512) NOT NULL,
   `product_image` varchar(124) NOT NULL,
   `product_count` int(10) NOT NULL,
-  `product_characteristic` varchar(512) NOT NULL,
+  `product_characteristic` varchar(8096) NOT NULL,
   `product_category` int(11) NOT NULL,
   `product_status` enum('0','1') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
