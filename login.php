@@ -81,10 +81,8 @@ HTML;
   integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
   crossorigin="anonymous">
 </head>
-	<body class="container">
-	<div class="jumbotron">
-		<h1>Авторизация</h1>
-	</div>
+	<body>
+    <?php require_once("/assets/header.php")?>
 		<div class="reg">
 			<form class="container" method="post">
 				<div class="form-group">
@@ -93,8 +91,8 @@ HTML;
 				<h3>Пароль</h3>
 				<input type="password" name="password" class="form-control" required>
 				</div>
-				<input type="submit"  name="loginBTN" value="Войти" class="btn btn-outline-success btn-lg btn-block">
-				<a href="register.php" class="btn btn-outline-primary btn-lg btn-block">Регистрация</a>
+				<input type="submit"  name="loginBTN" value="Войти" class="btn btn-success btn-lg btn-block">
+				<a href="register.php" class="btn btn-primary btn-lg btn-block">Регистрация</a>
 			</form>
 		</div>
 		

@@ -145,6 +145,29 @@ HTML;
 </nav>
 HTML;
             break;
+        default:
+            echo <<<HTML
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(0,255,0,0.16)">
+  <a class="navbar-brand" href="index.php">
+Аптека
+  </a>
+</nav>
+HTML;
+            break;
     }
+}
+else
+{
+    echo <<<HTML
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(0,255,0,0.16);">
+  <ul class="navbar-nav mr-auto container">
+      <li class="nav-item active">
+        <a class="nav-link display-4" href="index.php">АВТОРИЗАЦИЯ<span class="sr-only">(current)</span></a>
+      </li>
+
+</ul>
+</nav>
+HTML;
+
 }
 ?>
