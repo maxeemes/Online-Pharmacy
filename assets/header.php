@@ -145,15 +145,6 @@ HTML;
 </nav>
 HTML;
             break;
-        default:
-            echo <<<HTML
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(0,255,0,0.16)">
-  <a class="navbar-brand" href="index.php">
-Аптека
-  </a>
-</nav>
-HTML;
-            break;
     }
 }
 else

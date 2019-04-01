@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="accb8ac9-a46e-479b-b05b-3328e0518424" name="Default Changelist" comment="Обновил БД сделал все кроме напонения">
+    <list default="true" id="accb8ac9-a46e-479b-b05b-3328e0518424" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,14 +39,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="655">
-              <caret line="164" column="37" selection-start-line="164" selection-start-column="37" selection-end-line="164" selection-end-column="37" />
+            <state relative-caret-position="502">
+              <caret line="147" selection-start-line="147" selection-end-line="147" />
               <folding>
                 <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
                 <element signature="e#2185#4191#0#PHP" />
                 <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
                 <element signature="e#4220#6392#0#PHP" />
-                <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
               </folding>
@@ -324,7 +322,7 @@
       <workItem from="1552372194111" duration="20626000" />
       <workItem from="1552450788224" duration="24147000" />
       <workItem from="1552627293339" duration="1272000" />
-      <workItem from="1553145134221" duration="1190000" />
+      <workItem from="1553145134221" duration="1591000" />
     </task>
     <task id="LOCAL-00001" summary="Edit">
       <created>1552373729012</created>
@@ -382,11 +380,18 @@
       <option name="project" value="LOCAL" />
       <updated>1552477430424</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Изменил страницу авторизации">
+      <created>1553146362300</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1553146362300</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90453000" />
+    <option name="totallyTimeSpent" value="90854000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -399,7 +404,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18710022" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -505,7 +509,8 @@
     <MESSAGE value="Обновил БД" />
     <MESSAGE value="Обновил БД и сделал норм заказ и добавление в корзину у root пользователя" />
     <MESSAGE value="Обновил БД сделал все кроме напонения" />
-    <option name="LAST_COMMIT_MESSAGE" value="Обновил БД сделал все кроме напонения" />
+    <MESSAGE value="Изменил страницу авторизации" />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменил страницу авторизации" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/register.php">
@@ -799,14 +804,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="655">
-          <caret line="164" column="37" selection-start-line="164" selection-start-column="37" selection-end-line="164" selection-end-column="37" />
+        <state relative-caret-position="502">
+          <caret line="147" selection-start-line="147" selection-end-line="147" />
           <folding>
             <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
             <element signature="e#2185#4191#0#PHP" />
             <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
             <element signature="e#4220#6392#0#PHP" />
-            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
           </folding>
